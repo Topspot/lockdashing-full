@@ -22,7 +22,7 @@ class HomeController extends BaseController {
 //    }
 
     public function getIndex() {
-       $products = Product::paginate(3);
+       $products = Product::paginate(2);
   
         return View::make('home.index', compact('products'));
 //		return View::make('hello');
