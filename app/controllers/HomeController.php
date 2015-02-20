@@ -1,0 +1,31 @@
+<?php
+
+class HomeController extends BaseController {
+    /*
+      |--------------------------------------------------------------------------
+      | Default Home Controller
+      |--------------------------------------------------------------------------
+      |
+      | You may wish to use controllers instead of, or in addition to, Closure
+      | based routes. That's great! Here is an example controller method to
+      | get you started. To route to this controller, just add the route:
+      |
+      |	Route::get('/', 'HomeController@showWelcome');
+      |
+     */
+
+//    public function front() {
+//        $products = Product::all();
+//
+//        return View::make('home.front', compact('products'));
+////		return View::make('hello');
+//    }
+
+    public function getIndex() {
+       $products = Product::paginate(3);
+  
+        return View::make('home.index', compact('products'));
+//		return View::make('hello');
+    }
+
+}
